@@ -4,243 +4,72 @@
 body{
     padding: 0px;
     margin: 0px;
+    font-family: 'Titillium Web', sans-serif;
+    width: 100%;
+    background-image: url(Images/background.png);
+    background-size: 50%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-nav {
-  width: 80%;
-  margin: 0 auto;
-  background: #fff;
-  padding: 10px 0;
-  box-shadow: 0px 5px 0px #dedede;
-}
-
-/* By Dominik Biedebach @domobch */
-nav ul {
-  list-style: none;
-  text-align: center;
-}
-nav ul li {
-  display: inline-block;
-}
-nav ul li a {
-  display: block;
-  padding: 15px;
-  text-decoration: none;
-  color: #aaa;
-  font-weight: 800;
-  text-transform: uppercase;
-  margin: 0 10px;
-}
-nav ul li a,
-nav ul li a:after,
-nav ul li a:before {
-  transition: all 1s;
-}
-nav ul li a:hover {
-  color: #555;
-}
-
-/* By Dominik Biedebach @domobch */
-
-
-/* stroke */
-nav.stroke ul li a,
-nav.fill ul li a {
-  position: relative;
-}
-nav.stroke ul li a:after,
-nav.fill ul li a:after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 0%;
-  content: '.';
-  color: transparent;
-  background: #333;
-  height: 1px;
-}
-nav.stroke ul li a:hover:after {
+nav{
+  display: flex;
+  height: 80px;
   width: 100%;
-}
-
-nav.fill ul li a {
-  transition: all 2s;
-}
-/* By Dominik Biedebach @domobch */
-
-nav.fill ul li a:after {
-  text-align: left;
-  content: '.';
-  margin: 0;
-  opacity: 0;
-}
-nav.fill ul li a:hover {
-  color: #023f1c;
-  z-index: 1;
-}
-nav.fill ul li a:hover:after {
-  z-index: -10;
-  animation: fill 1s forwards;
-  -webkit-animation: fill 1s forwards;
-  -moz-animation: fill 1s forwards;
-  opacity: 1;
-}
-
-/* Circle */
-nav.circle ul li a {
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-/* By Dominik Biedebach @domobch */
-nav.circle ul li a:after {
-  display: block;
-  position: absolute;
-  margin: 0;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  content: '.';
-  color: transparent;
-  width: 1px;
-  height: 1px;
-  border-radius: 50%;
   background: transparent;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-nav.circle ul li a:hover:after {
-  -webkit-animation: circle 1.5s ease-in forwards;
+nav .logo{
+  color: black;
+  font-size: 35px;
+  font-weight: 600;
+  margin-left: 25px;
 }
-
-/* SHIFT */
-nav.shift ul li a {
-  position:relative;
-  z-index: 1;
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-right: 25px;
 }
-nav.shift ul li a:hover {
-  color: #91640F;
+nav ul li{
+  margin: 0 5px;
 }
-nav.shift ul li a:after {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-  width: 100%;
-  height: 1px;
-  content: '.';
-  color: transparent;
-  background: #F1C40F;
-  visibility: none;
-  opacity: 0;
-  z-index: -1;
-}
-nav.shift ul li a:hover:after {
-  opacity: 1;
-  visibility: visible;
-  height: 100%;
-}
-
-/* By Dominik Biedebach @domobch */
-
-/* Blend */
-nav.blend ul li a {
-  position: relative;
+nav ul li a{
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
   border-radius: 5px;
-  overflow: hidden;
-  z-index: 1;
+  letter-spacing: 1px;
+  transition: all 0.5s ease;
 }
-nav.blend ul li a:hover {
+nav ul li a.active,
+nav ul li a:hover{
   color: #fff;
+  background: #111;
 }
-nav.blend ul li a:before,
-nav.blend ul li a:after {
-  position: absolute;
-  width: 0px;
-  height: 100%;
-  top: 0;
-  bottom: 0;
-  background: #D35400;
-  transition: all .5s;
-  margin: auto;
-  content: '.';
-  color: transparent;
-  z-index: -1;
-  opacity: 0.75;
+nav .menu-btn i{
+  color: #111;
+  font-size: 22px;
+  cursor: point;
+  display: none;
 }
-nav.blend ul li a:before {
-  left: 0;
-}
-nav.blend ul li a:after {
-  right: 0;
+input[type="checkbox"]{
+  display: none;
 }
 
-nav.blend ul li a:hover:after,
-nav.blend ul li a:hover:before {
-  width: 100%;
+.logoimg{
+    height: 25px;
+    margin-right: 10px;
 }
 
-/* DROWN */
-
-nav.drown ul li a {
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-nav.drown ul li a:hover {
-  color: #fff;
-}
-
-nav.drown ul li a:before {
-  background: #fff;
-  content: '.';
-  color: transparent;
-  position: absolute;
-  width: 500%;
-  top: 100px;
-  right: 300px;
-  height: 300px;
-  z-index: -1;
-}
-nav.drown ul li a:hover:before {
-  left: auto;
-  bottom: auto;
-  right: -50%;
-  top: 0;
-  background: #89C52B;
-}
-
-.drivergrid{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    margin: 5% 10%;
-    color: skyblue;
-    border-style: solid;
-}
-
-.driverinfo{
-    margin-left: 10px;
-}
-
-.fName{
-    font-weight: normal;
-    margin: 5;
-}
-
-.lName{
-    font-size: 20px;
-    margin: 0;
-}
-
-.driverCtry{
-    height: 16px;
-}
-
-.driverImg{
-    height: 150px;
+footer{
+    margin-top: auto;
+    text-align: center;
+    background-color: whitesmoke;
+    padding: 10px 450px 10px 450px;
 }
